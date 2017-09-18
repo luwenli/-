@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../bootstrap.css"/>
+    <style>
+
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bar-tou{
+            width: 255px;
+            height: 380px;
+            background-color: #3c3c3c;
+            color: whitesmoke;
+            padding: 0 15px;
+        }
+        .header{
+            width: 100%;
+            height: 50px;
+            background-color: #3c3c3c;
+            color: whitesmoke;
+            float: left;
+            position: relative;
+            z-index: 9;
+        }
+        .jian{
+            width: 250px;
+        }
+        .jian>li{
+            margin: 16px 0;
+            cursor: pointer;
+            font-size: 13px;
+            transition:padding-left 300ms;
+            border-bottom: 1px solid black;
+        }
+        .jian li:nth-of-type(n+2):hover{
+            color: orange;
+            padding-left: 10px;
+        }
+
+        .jian>li> img{
+            margin-right: 10px;
+        }
+        .jian>li>span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            float: right;
+        }
+        .jian>li:nth-of-type(1){
+            font-size: 18px;
+            margin-left: 60px;
+            border-bottom: none;
+        }
+        .jian>li:last-of-type{
+            border-bottom: none;
+        }
+        .shou>li{
+            height: 50px;
+            line-height: 50px;
+            padding: 0 25px;
+            cursor: pointer;
+        }
+        .shou>li:hover{
+            color: orange;
+            background-color: black;
+        }
+        #carousel-example-generic{
+            width: 100%;
+            height: 330px;
+            overflow: hidden;
+        }
+        .glyphicon-chevron-left:before,.glyphicon-chevron-right:before{
+            content: '';
+        }
+        .text-s{
+            font-size: 20px;
+            margin-top: 55px;
+        }
+        .text-s>span{
+            border: 2px solid black;
+            padding: 10px 15px;
+        }
+        .cen-jian{
+            margin-top: 40px;
+        }
+        .text-j{
+            font-size: 20px;
+            margin-top: 55px;
+        }
+        .text-j>span{
+            border: 2px solid black;
+            padding: 10px 35px;
+        }
+        .text-left-wo{
+            font-size: 18px;
+        }
+        .text-left-cha{
+            background-color: #2f2f2f;
+            padding: 5px;
+            color: whitesmoke;
+        }
+        .text-qite{
+            margin-top: 73px;
+        }
+        .col-yi{
+            margin-top: 30px;
+        }
+        .text-x{
+            font-size: 20px;
+            margin-top: 65px;
+        }
+        .text-x>span{
+            border: 2px solid black;
+            padding: 10px 35px;
+        }
+        .rang{
+            margin-top: 60px;
+        }
+        .tu-li{
+            width: 85%;
+        }
+        .new-bar>div:nth-of-type(n+3){
+            margin-top: 40px;
+        }
+        .box{
+            margin-top: 30px;
+        }
+        .over{
+            box-sizing: border-box;
+        }
+        .dingpo{
+            position: relative;
+        }
+        .dingpo p{
+            position: absolute;
+            bottom: 40px;
+            left: 205px;
+            font-size: 20px;
+        }
+        .dingpo span{
+            background-color: white;
+            border: 2px solid #2e2e2e;
+            padding: 10px 15px;
+        }
+        .ppo{
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+        }
+        .ppo span{
+            padding: 10px 50px;
+            background-color: rgba(0,0,0,0.6);
+            box-sizing: border-box;
+        }
+        .col-caifu{
+            background-color: rgba(254, 214, 217, 0.5);
+            width: 272px;
+        }
+        .col-caifu>p:nth-of-type(1){
+            font-size: 20px;
+            color: orange;
+           padding: 15px 0 10px 0;
+        }
+        .col-caifu>p:nth-of-type(1):hover{
+            color: black;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .col-caifu>p:nth-of-type(2){
+            font-size: 13px;
+            color: #b0b0b0;
+            padding: 5px 0 15px 0;
+        }
+        .col-zhao{
+            margin-top: 60px;
+        }
+        .qq{
+            margin-top: 50px;
+        }
+        footer{
+            background-color: #232323;
+        }
+        .boxyi{
+            margin-top: 60px;
+        }
+        .col-ul>li:nth-of-type(1){
+            font-size: 18px;
+            color: white;
+        }
+        .col-ul li{
+            font-size: 13px;
+            color: #a8a8a8;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+        .col-ul li:hover:nth-of-type(n+2){
+            color: orange;
+            text-decoration:underline;
+        }
+        .fu{
+            overflow: hidden;
+        }
+        .fangda{
+            transition: all 1s;
+            cursor: pointer;
+        }
+        .fangda:hover{
+            transform: scale(1.1)
+        }
+        .xian{
+            margin-top: 40px;
+            color: #ababab;
+            cursor: pointer;
+        }
+        .xian li{
+            border-right: 1px solid #ababab;
+            padding: 0 20px;
+            font-size: 13px;
+            height: 13px;
+            line-height: 13px;
+        }
+        .xian li:hover{
+            color: orange;
+            text-decoration: underline;
+        }
+        .vv{
+            margin-top: 20px;
+            color: #ababab;
+        }
+        .ni{
+            position: absolute;
+            top:120px;
+            left: 600px;
+            z-index: 99;
+        }
+        .yuan{
+            position: absolute;
+            top: 30px;
+            left: 595px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background-color: rgba(232, 232, 232, 0.6);
+            z-index: 9;
+        }
+
+
+    </style>
+</head>
+<body>
+<nav class="header">
+    <div class="container ">
+        <ul class=" jian pull-left bar-tou ">
+            <li>简木分类</li>
+            <li><img src="img/menu_04.png" alt=""/>原水衣柜定制 <span>></span></li>
+            <li><img src="img/menu_11.png" alt=""/>原水护墙板定制 <span>></span></li>
+            <li><img src="img/menu_07.png" alt=""/>原水门定制 <span>></span></li>
+            <li><img src="img/menu_05.png" alt=""/>原水衣帽间定制 <span>></span></li>
+            <li><img src="img/menu_03.png" alt=""/>原水衣帽间定制 <span>></span></li>
+            <li><img src="img/menu_12.png" alt=""/>原水沐浴柜定制 <span>></span></li>
+            <li><img src="img/menu_13.png" alt=""/>原水定制 <span>></span></li>
+            <li><img src="img/menu_06.png" alt=""/>原水家具定制 <span>></span></li>
+        </ul>
+        <ul class="shou list-inline pull-left">
+            <li>首页</li>
+            <li>走进简木</li>
+            <li>新闻资讯</li>
+            <li>招商加盟</li>
+            <li>明星体验店</li>
+            <li>制定中心</li>
+            <li>联系简木</li>
+        </ul>
+    </div>
+</nav>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <img class="ni" src="img/logo.png" alt=""/>
+    <div class="yuan"></div>
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="img/header.gif" alt="...">
+        </div>
+        <div class="item">
+            <img src="img/header.gif" alt="...">
+        </div>
+        <div class="item">
+            <img src="img/header.gif" alt="...">
+        </div>
+    </div>
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><</span>
+        <span class="sr-only"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">></span>
+    </a>
+</div>
+<section class="container">
+    <p class=" text-center text-s"><span>简木制定流程</span></p>
+    <img  class="center-block cen-jian" src="img/nav.gif" alt=""/>
+    <p class=" text-center text-j"><span>配套服务</span></p>
+    <p class="pull-left text-left-wo"><span>我们的服务</span></p>
+    <p class="pull-right text-left-cha"><span>查看更多</span></p>
+    <div class="clearfix"></div>
+    <div class="row col-md-4">
+        <div class="text-qite pull-left">
+            <p>企业拥有几大核心品类，多种优质产品</p>
+            <p>产品覆盖家具用品，配饰用品</p>
+            <div class="fu">
+                <img  class="fangda" src="img/572ae33464c42.gif" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="col-yi">
+        <div class="col-md-4 col-md-push-1">
+            <div class="fu">
+                <img class="center-block fangda" src="img/570b48c5242c8.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="fu">
+                <img class="pull-right fangda" src="img/570b48c5242c8.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <p class=" text-center text-x"><span>新品推荐</span></p>
+    <div class="rang">
+        <p class="pull-left ">让生活简单/品质好/价格优/您的不二人选</p>
+        <p class="pull-right text-left-cha"><span>查看更多</span></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row box">
+        <div class=" col-md-6">
+            <div class="dingpo">
+                <div class="fu">
+                    <img class="fangda" src="img/jianmu首页_23.gif" alt="" />
+                </div>
+                <p><span>简木书柜 $8.8000</span></p>
+            </div>
+        </div>
+        <div class="col-md-6 new-bar">
+            <div class="col-md-6">
+                <div class="fu">
+                    <img class="tu-li fangda" src="img/jianmu首页_19.gif" alt=""/>
+                </div>
+                <p class="ppo"><span>欧 式 客 厅 $1300</span></p>
+            </div>
+            <div class="col-md-6 over">
+                <div class="fu">
+                    <img class="tu-li fangda" src="img/jianmu首页_21.gif" alt=""/>
+                </div>
+                <p class="ppo"><span>九 木 整 装 $1300</span></p>
+            </div>
+            <div class="col-md-6 ">
+                <div class="fu">
+                    <img class="tu-li fangda" src="img/jianmu首页_29.gif" alt=""/>
+                </div>
+                <p class="ppo"><span>欧 式 深色 $1300</span></p>
+            </div>
+            <div class="col-md-6 ">
+                <div class="fu">
+                    <img class="tu-li fangda" src="img/jianmu首页_30.gif" alt=""/>
+                </div>
+                <p class="ppo"><span>美 式 经 典 $1300</span></p>
+            </div>
+    </div>
+    </div>
+    <p class=" text-center text-x"><span>了解简木</span></p>
+    <div class="row col-zhao">
+        <div class="col-md-3">
+            <div class="col-caifu">
+                <div class="fu">
+                    <img class="fangda" src="img/info_01.jpg" alt=""/>
+                </div>
+                    <p class="text-center shang">招商加盟 </p>
+                    <p class="text-center">简木期待与您共享财富盛宴 </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="col-caifu">
+                <div class="fu">
+                    <img class="fangda" src="img/info_02%20(1).jpg" alt=""/>
+                </div>
+                <p class="text-center shang">明星体验店</p>
+                <p class="text-center">简木上百体验店在您身边严阵以待</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="col-caifu">
+                <div class="fu">
+                    <img  class="fangda" src="img/info_03.jpg" alt=""/>
+                </div>
+                <p class="text-center shang">走进简木</p>
+                <p class="text-center">爱木及木</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="col-caifu">
+                <div class="fu">
+                    <img class="fangda" src="img/info_04.jpg" alt=""/>
+                </div>
+
+                <p class="text-center shang">联系建木</p>
+                <p class="text-center">欢迎社会各界人士预约临场参观考察</p>
+            </div>
+        </div>
+    </div>
+    <img class="qq" src="img/QQ图片20170912110147.jpg" alt=""/>
+</section>
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="boxyi">
+                    <div class="col-md-2">
+                    <ul class="col-ul">
+                        <li>走进简木</li>
+                        <li>简木介绍</li>
+                        <li>简木文华</li>
+                        <li>简木荣誉</li>
+                    </ul>
+                </div>
+                    <div class="col-md-2">
+                        <ul class="col-ul">
+                            <li>新手指南</li>
+                            <li>常见问题</li>
+                            <li>隐私声明</li>
+                            <li>用户协议</li>
+                            <li>购物通知</li>
+                            <li>购物流程</li>
+                            <li>注册新用户</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <ul class="col-ul">
+                            <li>免费测量</li>
+                            <li>在线咨询预约</li>
+                            <li>电话预约</li>
+                            <li>填写表单预约</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <ul class="col-ul">
+                            <li>配送安装</li>
+                            <li>收货指南</li>
+                            <li>安装服务</li>
+                            <li>物流配送</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <ul class="col-ul">
+                            <li>售后保障</li>
+                            <li>免费声明</li>
+                            <li>正品保证</li>
+                            <li>售后服务</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <ul class="col-ul">
+                            <li>联系方式</li>
+                            <li>地址|中国广东省中上市汕头去228号</li>
+                            <li>电话|188-2200-6666</li>
+                            <li>邮箱|jianmu@.qq.com</li>
+                        </ul>
+                            <img src="img/QQ图片4.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="text-center list-inline xian">
+                <li>简木首页</li>
+                <li>制定中心 </li>
+                <li>招商加盟 </li>
+                <li>明星体验店</li>
+                <li>新闻资讯 </li>
+                <li>联系建木 </li>
+                <li>网站声明</li>
+                <li>站点地图</li>
+            </ul>
+            <p class="text-center vv">cxvdvvdvdvdvdsvdsvdvdvdvdvd</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+</body>
+<script src="../../JS/jquery.1.11.0.js"></script>
+<script src="../boss.js"></script>
+
+</html>
